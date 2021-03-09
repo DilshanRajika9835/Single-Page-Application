@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="img/logo.png">
+    <title>Single Page Application</title>
+    <style>
+        @media all and (min-width:483px )and (max-width:581px ) {
+
+            #customer_table{
+                font-size: 9px!important;
+
+            }
+            .table > :not(caption) > * > * {
+                padding: 0;
+            }
+        }
+        @media all and (min-width:483px )and (max-width:621px ) {
+
+            #order_table{
+                font-size: 9px!important;
+
+            }
+            .table > :not(caption) > * > * {
+                padding: 0;
+            }
+
+        }
+        @media all and (min-width:483px )and (max-width:621px ) {
+
+            #item_table{
+                font-size: 9px!important;
+
+            }
+            .table > :not(caption) > * > * {
+                padding: 0;
+            }
+
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
+    <div class="container-fluid " >
+        <a id="logo" class="navbar-brand" href="#"><img src="img/logo.png"alt="image" style="width: 59px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" id="btnCustomer">
+                    <a class="nav-link active" aria-current="page" href="#">CUSTOMER</a>
+                </li>
+                <li class="nav-item" id="btnOrder">
+                    <a class="nav-link active" aria-current="page" href="#">ORDER</a>
+                </li>
+                <li class="nav-item" id="btnItem">
+                    <a class="nav-link active" href="#">ITEM</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Other
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Order_Details</a></li>
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!----------------->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/img2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item active">
+            <img src="img/img1.png" class="d-block w-100" alt="...">
+        </div>
+
+
+    </div>
+</div>
+<!------------------------------------------------------------------>
+<div class="container-fluid mt-5 " id="menuForm">
+    <div class="row justify-content-center  ">
+        <div class="card m-1  small" style="width: 18rem" >
+            <img src="img/customer.png" class="card-img-top mt-1" alt="...">
+            <div class="card-body">
+                <h5 class="card-title fs-1 text-success " style="font-family: 'Bell MT',sans-serif;font-weight: 600">Customer</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="CustomerFormTM.html" class="btn btn-primary">View</a>
+            </div>
+        </div>
+        <div class="card m-1" style="width: 18rem">
+            <img src="img/item.png" class="card-img-top mt-1" alt="...">
+            <div class="card-body">
+                <h5 class="card-title fs-1 text-success " style="font-family: 'Bell MT',sans-serif;font-weight: 600">
+                    Item</h5>
+
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="ItemTM.html" class="btn btn-primary">View</a>
+            </div>
+        </div>
+        <div class="card m-1" style="width: 18rem">
+            <img src="img/order.png" class="card-img-top mt-1" alt="...">
+            <div class="card-body">
+                <h5 class="card-title fs-1 text-success " style="font-family: 'Bell MT',sans-serif;font-weight: 600">
+                    Orders</h5>
+
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="OrderFormTM.html" class="btn btn-primary">View</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Customer Form-->
+<div class="container-fluid mt-3 mb-3 " id="custForm">
+    <div class="row">
+        <img src="img/family.png" alt="image" class="col-12 col-sm-12 col-xl-6 col-md-12 col-xxl-6  ">
+        <div class="border col-12 col-sm-12 col-xl-6 col-md-12 col-xxl-6 " id="cust_form">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="custid" class="form-label" >Customer ID</label>
+                    <input type="text" class="form-control" id="custid" placeholder="C0023">
+                </div>
+                <div class="col-md-12">
+                    <label for="firstname" class="form-label" >First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Dilshan Rajika">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputPassword4" class="form-label" >Last Name</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Withanachchi">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="col-6">
+                    <label for="contact" class="form-label">Contact No</label>
+                    <input type="text" class="form-control" id="contact" placeholder="+94 766654345">
+                </div>
+                <div class="col-md-6">
+                    <label for="countryState" class="form-label">Country</label>
+                    <select id="countryState" class="form-select">
+                        <option selected>Choose..</option>
+                        <option>Sri Lanka</option>
+                    </select>
+                </div>
+                <div class="col-md-6 ">
+                    <label for="cityState" class="form-label">City</label>
+                    <select id="cityState" class="form-select">
+                        <option selected>Choose..</option>
+                        <option>Mathara</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Zip Code</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose..</option>
+                        <option>3456</option>
+                    </select>
+                </div>
+                <section class="btn-group p-2 ">
+                    <div class="col-4 btn-group w-25 m-1  ">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                    <div class="col-4 btn-group w-25 m-1  ">
+                        <button type="submit" class="btn btn-warning">Update</button>
+                    </div>
+                    <div class="col-4 btn-group w-25 m-1 ">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </section>
+
+
+            </form>
+        </div>
+        <section class="container-fluid">
+            <div class="row">
+                <div class="border  ">
+                    <table class="table caption-top table-hover border" id="customer_table" >
+                        <caption>List of Customers</caption>
+                        <thead class="bg-warning table-bordered">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Address </th>
+                            <th scope="col">City</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Contact No</th>
+                            <th scope="col">Zip Code</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>C001</td>
+                            <td>Dilshan</td>
+                            <td>Rajika</td>
+                            <td>Hapugala</td>
+                            <td>Galle</td>
+                            <td>Sri Lanka</td>
+                            <td>+94 766681528</td>
+                            <td>80163</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>C001</td>
+                            <td>Dilshan</td>
+                            <td>Rajika</td>
+                            <td>Hapugala</td>
+                            <td>Galle</td>
+                            <td>Sri Lanka</td>
+                            <td>+94 766681528</td>
+                            <td>80163</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>C001</td>
+                            <td>Dilshan</td>
+                            <td>Rajika</td>
+                            <td>Hapugala</td>
+                            <td>Galle</td>
+                            <td>Sri Lanka</td>
+                            <td>+94 766681528</td>
+                            <td>80163</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>
+<!--Order Form-->
+<div class="container-fluid mt-3 mb-3 " id="orderForm" >
+    <div class="row">
+        <img src="img/order.png" alt="image"  class="col-12 col-sm-12 col-xl-6 col-md-12 col-xxl-6  ">
+        <div  class="col-12 col-sm-12 col-xl-6 col-md-12 col-xxl-6  ">
+            <form class="row g-3 border mt-3 ">
+                <div class="col-7">
+                    <label for="order_id" class="form-label">Order ID</label>
+                    <input type="text" class="form-control" id="order_id" placeholder="DEO0934">
+                </div>
+                <div class="col-md-6">
+                    <label for="custid1" class="form-label">Customer_ID</label>
+                    <select id="custid1" class="form-select">
+                        <option selected>Choose..</option>
+                        <option>C001</option>
+                        <option>C002</option>
+                        <option>C003</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="itemcode" class="form-label">Customer_ID</label>
+                    <select id="itemcode" class="form-select">
+                        <option selected>Choose..</option>
+                        <option>I001</option>
+                        <option>I002</option>
+                        <option>I003</option>
+                    </select>
+                </div>
+
+                <div class="col-12 m-1">
+                    <label for="contact1" class="form-label">Item Name</label>
+                    <input type="text" class="form-control" id="contact1" placeholder="Anchor Milk">
+                </div>
+                <div class="col-12 m-1">
+                    <label for="description" class="form-label">Item Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Milk Pack 400g">
+                </div>
+                <div class="col-3 m-1">
+                    <label for="price" class="form-label">Unit_Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="400.00/=">
+                </div>
+                <div class="col-3 m-1">
+                    <label for="qty" class="form-label">Qty_OnHand</label>
+                    <input type="number" class="form-control" id="qty" placeholder="40">
+                </div>
+                <div class="col-3 m-1">
+                    <label for="orderQty" class="form-label">Order_Qty</label>
+                    <input type="number" class="form-control" id="orderQty" placeholder="40">
+                </div>
+
+            </form>
+        </div>
+        <div class=" border  mt-3">
+            <table class="table caption-top table-hover table-bordered" id="order_table">
+                <caption>List of Items</caption>
+                <thead >
+                <tr class="bg-warning">
+                    <th scope="col">No</th>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Description </th>
+                    <th scope="col">Unit Price(Rs./=)</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Total</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>C001</td>
+                    <td>Milk pack</td>
+                    <td>Milk Pack 1kg </td>
+                    <td>400.00</td>
+                    <td>3</td>
+                    <td>1200</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>C001</td>
+                    <td>Milk pack</td>
+                    <td>Milk Pack 1kg </td>
+                    <td>400.00</td>
+                    <td>3</td>
+                    <td>1200</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>C001</td>
+                    <td>Milk pack</td>
+                    <td>Milk Pack 1kg </td>
+                    <td>400.00</td>
+                    <td>3</td>
+                    <td>1200</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <form class="m-1">
+        <section class="container-fluid border">
+            <div class="row justify-content-center">
+                <div class="col-3 fw-bold">
+                    <label for="total" class=" col-form-label">Total(Rs)</label>
+                    <input type="password" class="form-control " id="total" placeholder=" Total Cost Rs/=" disabled>
+                </div>
+                <div class="col-3 fw-bold">
+                    <label for="cash" class=" col-form-label ">Cash(Rs)</label>
+                    <input type="password" class="form-control " id="cash" placeholder=" Total Cost Rs/=">
+                </div>
+                <div class="col-3 fw-bold">
+                    <label for="dilscoun" class=" col-form-label ">Discount(Rs)</label>
+                    <input type="password" class="form-control " id="dilscoun" placeholder=" Total Cost Rs/=" disabled>
+                </div>
+                <div class="col-3 fw-bold">
+                    <label for="balance" class=" col-form-label ">Balance(Rs)</label>
+                    <input type="password" class="form-control " id="balance" placeholder=" Total Cost Rs/=" disabled>
+                </div>
+                <div class="col-12 mt-2 text-end">
+                    <button type="button" class="btn btn-danger mb-2">Cancel</button>
+                    <button type="button" class="btn btn-success mb-2">Place Order</button>
+                </div>
+            </div>
+        </section>
+
+
+    </form>
+</div>
+<!--Item Form-->
+<div class="container-fluid mt-3 mb-3" id="itemForm">
+    <div class="row">
+        <img src="img/item.png" alt="image"  class="col-12 col-sm-12 col-xl-6 col-md-12 col-xxl-6  ">
+
+        <div class=" border col-12 col-sm-12 col-xl-6 col-md-12 col-xxl-6 " >
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Item Code</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="MDE09736">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword5" class="form-label" >Item Name</label>
+                    <input type="password" class="form-control" id="inputPassword5" placeholder="Anchor Milk ">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress5" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="inputAddress5" placeholder="Milk pack 1Kg..">
+                </div>
+                <div class="col-6">
+                    <label for="contact5" class="form-label">Unit_Price</label>
+                    <input type="number" class="form-control" id="contact5" placeholder="Rs.400.00/=">
+                </div>
+                <div class="col-4">
+                    <label for="qty5" class="form-label">Qty_OnHand</label>
+                    <input type="number" class="form-control" id="qty5" placeholder="40">
+                </div>
+
+                <section class="btn-group ">
+                    <div class="col-4 btn-group m-1 w-25">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                    <div class="col-4 btn-group  m-1 w-25">
+                        <button type="submit" class="btn btn-warning">Update</button>
+                    </div>
+                    <div class="col-4 btn-group m-1 w-25">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </section>
+
+
+            </form>
+        </div>
+        <div class="col-sm border m-1">
+            <table class="table caption-top table-hover table-bordered" id="item_table" style="font-family:
+            'Bell MT',sans-serif">
+                <caption>List of Items</caption>
+                <thead class=" bg-warning">
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Description </th>
+                    <th scope="col">Unit Price(Rs./=)</th>
+                    <th scope="col">Qty_OnHand</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>C001</td>
+                    <td>Milk pack</td>
+                    <td>Milk Pack 1kg </td>
+                    <td>400.00</td>
+                    <td>30</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>C001</td>
+                    <td>Milk pack</td>
+                    <td>Milk Pack 1kg </td>
+                    <td>400.00</td>
+                    <td>30</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>C001</td>
+                    <td>Milk pack</td>
+                    <td>Milk Pack 1kg </td>
+                    <td>400.00</td>
+                    <td>30</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var customer = document.getElementById("custForm");
+    var homepage = document.getElementById("menuForm");
+    var order = document.getElementById("orderForm");
+    var item = document.getElementById("itemForm");
+    customer.style.display='none';
+    homepage.style.display='block';
+    order.style.display='none';
+    item.style.display='none';
+
+    var navcustomer = document.getElementById("btnCustomer");
+    navcustomer.addEventListener('click',function () {
+        customer.style.display='block';
+        homepage.style.display='none';
+        order.style.display='none';
+    });
+    var logoicon=document.getElementById("logo");
+    logoicon.addEventListener('click',function () {
+        customer.style.display='none';
+        homepage.style.display='block';
+        order.style.display='none';
+    });
+    var orders=document.getElementById("btnOrder");
+    orders.addEventListener('click',function () {
+        customer.style.display='none';
+        homepage.style.display='none';
+        order.style.display='block';
+    });
+    var items=document.getElementById("btnItem");
+    items.addEventListener('click',function () {
+        customer.style.display='none';
+        homepage.style.display='none';
+        order.style.display='none';
+        item.style.display='block';
+    });
+
+</script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
